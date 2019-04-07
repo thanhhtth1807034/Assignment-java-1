@@ -2,6 +2,7 @@ package controller;
 
 import entity.Employee;
 import model.EmployeeModel;
+
 import java.util.Scanner;
 
 public class EmployeeController {
@@ -25,10 +26,13 @@ public class EmployeeController {
 
             if (employeeModel.checkExistAccount(account)) {
                 System.out.println("tài khoản đã tồn tại, vui lòng nhập lại.");
+            } else if ( name.length() == 0 || address.length() == 0 || email.length() == 0 || account.length() == 0 || password.length() == 0) {
+                System.out.println("Vui lòng nhập đầy đủ thông tin");
             } else {
                 Employee emp = new Employee(name, address, email, account, password);
                 employeeModel.register(emp);
                 break;
+
             }
         }
     }
