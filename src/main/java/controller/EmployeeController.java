@@ -28,7 +28,6 @@ public class EmployeeController {
             } else {
                 Employee emp = new Employee(name, address, email, account, password);
                 employeeModel.register(emp);
-                System.out.println("Đăng ký thành công.");
                 break;
             }
         }

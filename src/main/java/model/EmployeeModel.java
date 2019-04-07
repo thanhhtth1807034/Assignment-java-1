@@ -24,11 +24,12 @@ public class EmployeeModel {
             preparedStatement.setString(4,emp.getAccount());
             preparedStatement.setString(5,emp.getPassword());
             preparedStatement.execute();
+            System.out.println("Đăng kí tài khoản thành công!");
             return true;
         } catch (Exception ex) {
             System.out.println("Error:" + ex.getMessage());
+            return false;
         }
-        return false;
     }
 
     public boolean checkExistAccount(String account){
